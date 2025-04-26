@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <title>ChartJS diagram</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script defer src="chart.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Web-programozás-1 Előadás Házi feladat</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Kezdőlap</a></li>
+            <li><a href="tabla.html">Táblázat</a></li>
+            <li><a href="html5.html">HTML5</a></li>
+            <li><a href="chart.html" class="active">ChartJS</a></li>
+            <li><a href="ajax.html">AJAX</a></li>
+            <li><a href="oojs.html">OOJS</a></li>
+            <li><a href="react.html">React</a></li>
+        </ul>
+    </nav>
+    <aside>
+        <p>ChartJS oldalsáv</p>
+    </aside>
+    <div class="content">
+        <h2>Adattábla és diagram</h2>
+        <table id="numberTable" >
+            <thead>
+                <tr><th>#</th><th>Érték 1</th><th>Érték 2</th><th>Érték 3</th><th>Érték 4</th><th>Érték 5</th></tr>
+            </thead>
+            <tbody>
+                <tr onclick="showChart(this)"><td>1</td><td>17</td><td>99</td><td>172</td><td>11</td><td>23</td></tr>
+                <tr onclick="showChart(this)"><td>2</td><td>15</td><td>11</td><td>10</td><td>14</td><td>13</td></tr>
+                <tr onclick="showChart(this)"><td>3</td><td>7</td><td>22</td><td>88</td><td>10</td><td>6</td></tr>
+                <tr onclick="showChart(this)"><td>4</td><td>25</td><td>18</td><td>19</td><td>17</td><td>40</td></tr>
+                <tr onclick="showChart(this)"><td>5</td><td>44</td><td>62</td><td>14</td><td>82</td><td>12</td></tr>
+            </tbody>
+        </table>
+
+        <canvas id="lineChart" width="400" height="200"></canvas>
+    </div>
+    <footer>
+        <p>Készítők: Botka Gergő (BT80Y0), Tóth Szabolcs Botond (TB8BGC)</p>
+    </footer>
+</body>
+</html>

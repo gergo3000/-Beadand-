@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <title>AJAX API példa</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="ajax.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Web-programozás-1 Előadás Házi feladat</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Kezdőlap</a></li>
+            <li><a href="tabla.html">Táblázat</a></li>
+            <li><a href="html5.html">HTML5</a></li>
+            <li><a href="chart.html">ChartJS</a></li>
+            <li><a href="ajax.html" class="active">AJAX</a></li>
+            <li><a href="oojs.html">OOJS</a></li>
+            <li><a href="react.html">React</a></li>
+        </ul>
+    </nav>
+    <aside>
+        <p>AJAX oldalsáv</p>
+    </aside>
+    <div class="content">
+        <h2>Adatok API-val</h2>
+
+        <div>
+            <h3>Új adat</h3>
+            <input type="text" id="name" placeholder="Név">
+            <input type="text" id="height" placeholder="Magasság">
+            <input type="text" id="weight" placeholder="Súly">
+            <button onclick="createData()">Hozzáadás</button>
+        </div>
+
+        <div>
+            <h3>Adat módosítása</h3>
+            <input type="text" id="updateId" placeholder="ID">
+            <button onclick="getDataForId()">Adatok lekérése</button><br>
+            <input type="text" id="u_name" placeholder="Név">
+            <input type="text" id="u_height" placeholder="Magasság">
+            <input type="text" id="u_weight" placeholder="Súly">
+            <button onclick="updateData()">Frissítés</button>
+        </div>
+
+        <div>
+            <h3>Adat törlése</h3>
+            <input type="text" id="deleteId" placeholder="ID">
+            <button onclick="deleteData()">Törlés</button>
+        </div>
+
+        <h3>Adatok listázása</h3>
+        <button onclick="readData()">Adatok lekérése</button>
+        <div id="dataList"></div>
+        <div id="stats"></div>
+
+        <p id="feedback"></p>
+    </div>
+    <footer>
+        <p>Készítők: Botka Gergő (BT80Y0), Tóth Szabolcs Botond (TB8BGC)</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <title>Táblázat CRUD</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="tabla.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Web-programozás-1 Előadás Házi feladat</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Kezdőlap</a></li>
+            <li><a href="tabla.html" class="active">Táblázat</a></li>
+            <li><a href="html5.html">HTML5</a></li>
+            <li><a href="chart.html">ChartJS</a></li>
+            <li><a href="ajax.html">AJAX</a></li>
+            <li><a href="oojs.html">OOJS</a></li>
+            <li><a href="react.html">React</a></li>
+        </ul>
+    </nav>
+    <aside>
+        <p>Táblázat oldalsáv</p>
+    </aside>
+    <div class="content">
+        <h3>CRUD táblázat</h3>
+
+        <form id="dataForm">
+            <input type="text" id="name" placeholder="Név" required minlength="2" maxlength="30">
+            <input type="number" id="kor" placeholder="Kor" required min="0" max="120">
+            <input type="text" id="varos" placeholder="Város" required minlength="2" maxlength="30">
+            <input type="text" id="email" placeholder="Email" required pattern="[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+">
+            <button type="submit">Hozzáadás</button>
+        </form>
+
+        <input type="text" id="search" placeholder="Keresés...">
+
+        <table id="dataTable" border="1">
+            <thead>
+                <tr>
+                    <th onclick="sortTable(0)">Név</th>
+                    <th onclick="sortTable(1)">Kor</th>
+                    <th onclick="sortTable(2)">Város</th>
+                    <th onclick="sortTable(3)">Email</th>
+                    <th>Művelet</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Dinamikus sorok -->
+            </tbody>
+        </table>
+        
+    </div>
+    <footer>
+        <p>Készítők: Botka Gergő (BT80Y0), Tóth Szabolcs Botond (TB8BGC)</p>
+    </footer>
+</body>
+</html>

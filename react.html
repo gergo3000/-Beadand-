@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <title>React alkalmazások</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Web-programozás-1 Előadás Házi feladat</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Kezdőlap</a></li>
+            <li><a href="tabla.html">Táblázat</a></li>
+            <li><a href="html5.html">HTML5</a></li>
+            <li><a href="chart.html">ChartJS</a></li>
+            <li><a href="ajax.html">AJAX</a></li>
+            <li><a href="oojs.html">OOJS</a></li>
+            <li><a href="react.html" class="active">React</a></li>
+        </ul>
+    </nav>
+    <aside>
+        <p>React oldalsáv</p>
+    </aside>
+    <div class="content">
+        <h2>React alkalmazások</h2>
+        <div id="app1"></div>
+        <hr>
+        <div id="app2"></div>
+    </div>
+    <footer>
+        <p>Készítők: Botka Gergő (BT80Y0), Tóth Szabolcs Botond (TB8BGC)</p>
+    </footer>
+
+    <script type="text/babel">
+        const { useState } = React;
+
+        function Counter() {
+            const [count, setCount] = useState(0);
+            return (
+                <div>
+                    <h3>Számláló</h3>
+                    <p>Aktuális érték: {count}</p>
+                    <button onClick={() => setCount(count + 1)}>Növel</button>
+                    <button onClick={() => setCount(count - 1)}>Csökkent</button>
+                    <button onClick={() => setCount(0)}>Alaphelyzet</button>
+                </div>
+            );
+        }
+
+        function ListManager() {
+            const [items, setItems] = useState([]);
+            const [input, setInput] = useState("");
+
+            const addItem = () => {
+                if (input.trim()) {
+                    setItems([...items, input]);
+                    setInput("");
+                }
+            };
+
+            const removeItem = (index) => {
+                setItems(items.filter((_, i) => i !== index));
+            };
+
+            return (
+                <div>
+                    <h3>Lista kezelő</h3>
+                    <input value={input} onChange={(e) => setInput(e.target.value)} placeholder="Új elem" />
+                    <button onClick={addItem}>Hozzáadás</button>
+                    <ul>
+                        {items.map((item, index) => (
+                            <li key={index}>
+                                {item} <button onClick={() => removeItem(index)}>Törlés</button>
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+            );
+        }
+
+        ReactDOM.createRoot(document.getElementById("app1")).render(<Counter />);
+        ReactDOM.createRoot(document.getElementById("app2")).render(<ListManager />);
+    </script>
+</body>
+</html>
